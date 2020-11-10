@@ -1,0 +1,50 @@
+<template>
+  <!-- Spinner goes here -->
+  <template if:true={isLoading}>
+    <div class="slds-is-relative spinner-height">
+      <lightning-spinner alternative-text="Loading" variant="brand" size="medium" data-text="Loading ..."
+        class="loader">
+      </lightning-spinner>
+    </div>
+  </template>
+
+  <template if:false={isLoading}>
+    <div if:false={error}>
+      <div class="outer-container">
+        <div class="slds-box slds-p-around_none slds-var-m-top_x-small slds-var-m-bottom_medium slds-m-horizontal_none">
+          <lightning-layout horizontal-align="spread" vertical-align="center">
+            <lightning-layout-item size="5" flexibility="auto" padding="around-small">
+              <div class="inner-container white-box slds-box slds-text-align_left slds-scrollable">
+                <c-area-of-interest-multi-level-picklist cmp-name="picklist" items={picklist}
+                  onaddselected={addSelectedHandler}>
+                </c-area-of-interest-multi-level-picklist>
+              </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="1" flexibility="auto" padding="around-small">
+              <div class="arrow-box slds-box slds-var-p-around_medium slds-align_absolute-center">
+                <lightning-icon icon-name="utility:right" alternative-text="Move to right" title="Move to right">
+                </lightning-icon>
+              </div>
+              <div class="arrow-box slds-box slds-var-p-around_medium slds-align_absolute-center">
+                <lightning-icon icon-name="utility:left" alternative-text="Move to left" title="Move to left">
+                </lightning-icon>
+              </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="5" flexibility="auto" padding="around-small">
+              <div class="inner-container white-box slds-box slds-text-align_left slds-scrollable">
+                <c-area-of-interest-multi-level-picklist cmp-name='selected' items={selected}
+                  onremoveselected={removeSelectedHandler}>
+                </c-area-of-interest-multi-level-picklist>
+              </div>
+            </lightning-layout-item>
+          </lightning-layout>
+        </div>
+      </div>
+    </div>
+
+    <div if:true={error}>
+      Error: {error}
+    </div>
+  </template>
+
+</template>

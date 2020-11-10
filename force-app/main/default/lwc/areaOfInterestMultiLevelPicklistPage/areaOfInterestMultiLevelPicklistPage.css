@@ -1,0 +1,31 @@
+.spinner-height {
+  height: 395px;
+}
+
+.outer-container {
+  background-color: rgb(243, 242, 242);
+}
+
+.arrow-box {
+  height: 40px;
+  margin: 70px 0;
+}
+
+.inner-container {
+  height: 345px;
+  overflow: auto;
+}
+
+.white-box {
+  background-color: rgb(255, 255, 255);
+}
+
+.loader::after {
+  position: absolute;
+  content: attr(data-text);
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  top: calc(50% + 2rem);
+  color: grey;
+}

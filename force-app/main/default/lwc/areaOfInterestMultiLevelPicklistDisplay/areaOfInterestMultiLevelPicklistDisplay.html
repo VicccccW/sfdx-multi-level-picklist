@@ -1,0 +1,29 @@
+<template>
+  <article class="slds-card">
+    <div class="slds-card__header slds-grid">
+      <header class="slds-media slds-media_center slds-has-flexi-truncate">
+        <div class="slds-media__body">
+          <h2 class="slds-card__header-title">
+            <span>Areas of Interest</span>
+          </h2>
+        </div>
+        <div class="slds-no-flex">
+          <c-area-of-interest-multi-level-picklist-modal record-id={recordId}>
+          </c-area-of-interest-multi-level-picklist-modal>
+        </div>
+      </header>
+    </div>
+    <div class="slds-card__body slds-card__body_inner">
+      <div class="slds-box">
+        <div if:false={error}>
+          <c-area-of-interest-multi-level-picklist items={items} record-id={recordId}>
+          </c-area-of-interest-multi-level-picklist>
+        </div>
+
+        <div if:true={error}>
+          Error: {account.error}
+        </div>
+      </div>
+    </div>
+  </article>
+</template>

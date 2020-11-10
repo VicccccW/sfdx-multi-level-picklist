@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Level_1__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Level 1</label>
+    <referenceTo>Areas_of_Interest_Level_1_Value__mdt</referenceTo>
+    <relationshipLabel>Areas of Interest Level 2 Values</relationshipLabel>
+    <relationshipName>Areas_of_Interest_Level_2_Values</relationshipName>
+    <required>true</required>
+    <type>MetadataRelationship</type>
+    <unique>false</unique>
+</CustomField>
